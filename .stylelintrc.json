@@ -2,15 +2,54 @@
   "extends": ["stylelint-config-standard-scss"],
   "rules": {
     "selector-class-pattern": [
-      "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+      "^(o|c|u)-[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
       {
         "resolveNestedSelectors": true,
-        "message": "Клас має відповідати БЕМ: block__element--modifier"
+        "message": "Клас має відповідати BEM з префіксом o-, c- або u-."
       }
     ],
     "max-nesting-depth": 3,
     "selector-max-id": 0,
     "declaration-no-important": true,
     "scss/load-no-partial-leading-underscore": null
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/styles/5-objects/**/*.scss"],
+      "rules": {
+        "selector-class-pattern": [
+          "^o-[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)?(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+          {
+            "resolveNestedSelectors": true
+          }
+        ],
+        "selector-max-type": 0
+      }
+    },
+    {
+      "files": ["src/styles/6-components/**/*.scss"],
+      "rules": {
+        "selector-class-pattern": [
+          "^c-[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)?(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+          {
+            "resolveNestedSelectors": true
+          }
+        ],
+        "selector-max-type": 0
+      }
+    },
+    {
+      "files": ["src/styles/7-utilities/**/*.scss"],
+      "rules": {
+        "selector-class-pattern": [
+          "^u-[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)?(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+          {
+            "resolveNestedSelectors": true
+          }
+        ],
+        "declaration-no-important": null,
+        "selector-max-type": 0
+      }
+    }
+  ]
 }
