@@ -1,1 +1,7 @@
-// Unclassed HTML elements.
+@use '../1-settings' as settings;
+
+:root {
+  --color-text: #{settings.$color-text};
+  --font-heading: #{settings.$font-heading};
+  --font-body: #{settings.$font-body};
+}
