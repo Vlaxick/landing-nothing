@@ -6,3 +6,23 @@ $body-size: 16px;
 $body-line-height: 1.4;
 $tablet-hero-title-size: 48px;
 $tablet-hero-title-line-height: 1;
+$desktop-hero-title-size: 56px;
+$breakpoints: (
+  'tablet': 744px,
+  'desktop': 1260px,
+);
+$grid-columns: (
+  'mobile': 2,
+  'tablet': 6,
+  'desktop': 12,
+);
+$grid-margins: (
+  'mobile': 20px,
+  'tablet': 72px,
+  'desktop': 120px,
+);
+$grid-gaps: (
+  'mobile': 20px,
+  'tablet': 64px,
+  'desktop': 24px,
+);
