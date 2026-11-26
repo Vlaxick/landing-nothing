@@ -1,0 +1,23 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  color: var(--color-text);
+  background: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

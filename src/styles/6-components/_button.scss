@@ -1,0 +1,32 @@
+.c-button {
+  display: inline-flex;
+  min-height: var(--button-height);
+  align-items: center;
+  justify-content: center;
+  padding-inline: var(--button-inline-padding);
+  border: 2px solid transparent;
+  border-radius: var(--control-radius);
+  background: var(--color-text);
+  color: var(--color-white);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    border-color: var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  &:active {
+    border-color: transparent;
+    background: var(--color-button-pressed);
+    color: var(--color-white);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
+  }
+}

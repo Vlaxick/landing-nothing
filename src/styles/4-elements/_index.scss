@@ -1,4 +1,5 @@
 @use '../1-settings' as settings;
+@forward 'base';
 
 :root {
   --color-text: #{settings.$color-text};
