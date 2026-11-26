@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use '../1-settings' as settings;
+@use '../2-tools' as tools;
+
+.o-grid {
+  --grid-columns: #{map.get(settings.$grid-columns, 'mobile')};
+  --grid-gap: #{map.get(settings.$grid-gaps, 'mobile')};
+
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  column-gap: var(--grid-gap);
+
+  @include tools.mq('tablet') {
+    --grid-columns: #{map.get(settings.$grid-columns, 'tablet')};
+    --grid-gap: #{map.get(settings.$grid-gaps, 'tablet')};
+  }
+
+  @include tools.mq('desktop') {
+    --grid-columns: #{map.get(settings.$grid-columns, 'desktop')};
+    --grid-gap: #{map.get(settings.$grid-gaps, 'desktop')};
+  }
+}
+
+.o-grid__item--full {
+  grid-column: 1 / -1;
+}
+
+.o-grid--debug {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgb(255 0 0 / 12%) 0,
+    rgb(255 0 0 / 12%) calc(100% - var(--grid-gap)),
+    transparent calc(100% - var(--grid-gap)),
+    transparent 100%
+  );
+  background-size: calc((100% + var(--grid-gap)) / var(--grid-columns)) 100%;
+}

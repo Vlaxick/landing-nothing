@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use '../1-settings' as settings;
+@use '../2-tools' as tools;
+
+.o-container {
+  width: 100%;
+  max-width: settings.$layout-max-width;
+  margin-inline: auto;
+  padding-inline: map.get(settings.$grid-margins, 'mobile');
+
+  @include tools.mq('tablet') {
+    padding-inline: map.get(settings.$grid-margins, 'tablet');
+  }
+
+  @include tools.mq('desktop') {
+    padding-inline: map.get(settings.$grid-margins, 'desktop');
+  }
+}
