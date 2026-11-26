@@ -2,6 +2,24 @@
 
 :root {
   --color-text: #{settings.$color-text};
+  --color-white: #{settings.$color-white};
+  --color-surface: #{settings.$color-surface};
+  --color-border: #{settings.$color-border};
+  --color-field-hover-border: #{settings.$color-field-hover-border};
+  --color-placeholder: #{settings.$color-placeholder};
+  --color-button-pressed: #{settings.$color-button-pressed};
   --font-heading: #{settings.$font-heading};
   --font-body: #{settings.$font-body};
+  --body-size: #{settings.$body-size};
+  --body-line-height: #{settings.$body-line-height};
+  --hero-title-mobile: #{settings.$mobile-hero-title-size};
+  --hero-title-tablet: #{settings.$tablet-hero-title-size};
+  --hero-title-desktop: #{settings.$desktop-hero-title-size};
+  --section-title-tablet: #{settings.$tablet-section-title-size};
+  --field-text-size: #{settings.$field-text-size};
+  --control-radius: #{settings.$control-radius};
+  --field-height: #{settings.$field-height};
+  --button-height: #{settings.$button-height};
+  --field-inline-padding: #{settings.$field-inline-padding};
+  --button-inline-padding: #{settings.$button-inline-padding};
 }
