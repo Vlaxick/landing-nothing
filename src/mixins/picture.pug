@@ -3,7 +3,8 @@ mixin picture(image, small, large, fallback, width, height, alt, className, size
     if mobileImage
       source(
         media='(max-width: 743px)',
-        srcset=`/src/assets/images/generated/${mobileImage}-130.webp 1x, /src/assets/images/generated/${mobileImage}-260.webp 2x`,
+        srcset=`/src/assets/images/generated/${mobileImage}-130.webp 130w, /src/assets/images/generated/${mobileImage}-260.webp 260w`,
+        sizes='calc((100vw - 60px) / 2)',
         type='image/webp'
       )
     source(
