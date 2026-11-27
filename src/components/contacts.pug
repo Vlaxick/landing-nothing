@@ -1,0 +1,47 @@
+section#contact.c-contacts.o-container(aria-labelledby='contact-title')
+  .o-grid
+    h2#contact-title.c-section-title.c-contacts__title Contact us
+    form.c-contacts__form(action='#contact', method='get')
+      .c-field.c-contacts__field
+        label.u-visually-hidden(for='contact-name') Name
+        input#contact-name.c-field__input(
+          type='text',
+          name='name',
+          placeholder='Name',
+          autocomplete='name',
+          required
+        )
+      .c-field.c-contacts__field
+        label.u-visually-hidden(for='contact-email') Email
+        input#contact-email.c-field__input(
+          type='email',
+          name='email',
+          placeholder='Email',
+          autocomplete='email',
+          required
+        )
+      .c-field.c-contacts__field
+        label.u-visually-hidden(for='contact-message') Message
+        textarea#contact-message.c-field__input.c-field__input--message(
+          name='message',
+          placeholder='Message',
+          required
+        )
+      button.c-button.c-contacts__button(type='submit') Send
+    address.c-contacts__details
+      dl
+        .c-contacts__detail
+          dt.c-contacts__label Phone
+          dd.c-contacts__value
+            a.c-contacts__link(href='tel:+123455555555') +1 234 5555-55-55
+        .c-contacts__detail
+          dt.c-contacts__label Email
+          dd.c-contacts__value
+            a.c-contacts__link(href='mailto:hello@nothing.com') hello@nothing.com
+        .c-contacts__detail
+          dt.c-contacts__label Address
+          dd.c-contacts__value 400 first ave.
+            br
+            | suite 700
+            br
+            | Minneapolis, MN 55401

@@ -1,0 +1,23 @@
+section#recommended.c-products.o-container(aria-labelledby='recommended-title')
+  .o-grid
+    h2#recommended-title.c-section-title.c-products__title Recommended
+    .c-products__list.o-grid
+      each product in products
+        article.c-product-card.c-products__item
+          +picture(
+            product.image,
+            product.small,
+            product.large,
+            product.fallback,
+            product.width,
+            product.height,
+            product.name,
+            'c-product-card__picture',
+            '(min-width: 1260px) 324px, (min-width: 744px) calc(100vw - 144px), calc(100vw - 40px)',
+          )
+          h3.c-product-card__title= product.name
+          p.c-product-card__description
+            if product.intro
+              span.c-product-card__intro= product.intro
+            = product.description
+          p.c-product-card__price= product.price

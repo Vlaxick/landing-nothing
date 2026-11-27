@@ -1,0 +1,23 @@
+section#categories.c-categories.o-container(aria-labelledby='categories-title')
+  .o-grid
+    h2#categories-title.c-section-title.c-categories__title Browse Nothing products by category
+    .c-categories__list
+      each category in categories
+        article.c-category.c-categories__item
+          .o-grid.c-category__images
+            each size in [category.first, category.second]
+              - const wide = size === 'wide';
+              - const image = `category-${category.slug}-${size}`;
+              +picture(
+                image,
+                wide ? 672 : 324,
+                wide ? 1344 : 648,
+                'png',
+                wide ? 1344 : 648,
+                648,
+                '',
+                `c-category__picture c-category__picture--${size}`,
+                '(min-width: 1260px) 672px, (min-width: 744px) 60vw, 50vw',
+              )
+          h3.c-category__title= category.name
+    a.c-button.c-categories__button(href='https://nothing.tech/collections/all') View all

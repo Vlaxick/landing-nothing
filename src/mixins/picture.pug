@@ -1,0 +1,22 @@
+mixin picture(image, small, large, fallback, width, height, alt, className, sizes)
+  picture(class=className)
+    source(
+      type='image/avif',
+      srcset=`/src/assets/images/generated/${image}-${small}.avif ${small}w, /src/assets/images/generated/${image}-${large}.avif ${large}w`,
+      sizes=sizes
+    )
+    source(
+      type='image/webp',
+      srcset=`/src/assets/images/generated/${image}-${small}.webp ${small}w, /src/assets/images/generated/${image}-${large}.webp ${large}w`,
+      sizes=sizes
+    )
+    img.c-picture__image(
+      src=`/src/assets/images/generated/${image}-${large}.${fallback}`,
+      srcset=`/src/assets/images/generated/${image}-${small}.${fallback} ${small}w, /src/assets/images/generated/${image}-${large}.${fallback} ${large}w`,
+      sizes=sizes,
+      width=width,
+      height=height,
+      alt=alt,
+      loading='lazy',
+      decoding='async'
+    )

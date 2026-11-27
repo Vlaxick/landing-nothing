@@ -1,19 +1,13 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    meta(name='description', content='Discover Nothing products.')
-    title Nothing
-    link(rel='preconnect', href='https://fonts.googleapis.com')
-    link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
-    link(
-      rel='stylesheet',
-      href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Space+Mono:wght@400;700&display=swap'
-    )
-    link(rel='stylesheet', href='/src/styles/main.scss')
-  body
-    main
-      .o-container
-        .o-grid
-          h1.o-grid__item--full Nothing
+extends ../layouts/main
+
+block content
+  include ../data/content.pug
+  include ../mixins/picture.pug
+  include ../components/header.pug
+  main
+    include ../components/hero.pug
+    include ../components/products.pug
+    include ../components/categories.pug
+    include ../components/about.pug
+  footer
+    include ../components/contacts.pug

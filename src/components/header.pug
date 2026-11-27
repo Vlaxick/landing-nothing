@@ -1,0 +1,35 @@
+header.c-header
+  .o-container.c-header__inner
+    a.c-header__logo(href='#top', aria-label='Nothing — home')
+      img.c-header__logo-image(
+        src='/src/assets/icons/Logo.svg',
+        alt='Nothing',
+        width='172',
+        height='24'
+      )
+    .c-header__actions
+      a.c-header__phone(href='tel:+123455555555', aria-label='Call +1 234 5555-55-55')
+        span.c-header__phone-number +1 234 5555-55-55
+        include ../assets/icons/Icon-Phone-call.svg
+      a.c-header__menu(href='#menu', aria-label='Open menu')
+        include ../assets/icons/Icon-Burger-menu.svg
+aside#menu.c-menu(aria-label='Main menu')
+  .o-container.c-menu__inner
+    .c-menu__header
+      a.c-menu__logo(href='#top', aria-label='Nothing — home')
+        img.c-menu__logo-image(
+          src='/src/assets/icons/Logo.svg',
+          alt='Nothing',
+          width='172',
+          height='24'
+        )
+      a.c-menu__close(href='#top', aria-label='Close menu')
+        include ../assets/icons/Icon-Close.svg
+    nav(aria-label='Main navigation')
+      ul.c-menu__list
+        each link in navigation
+          li.c-menu__item
+            a.c-menu__link(href=link.href)= link.label
+    .c-menu__contact
+      a.c-menu__number(href='tel:+123455555555') +1 234 5555-55-55
+      a.c-menu__call(href='tel:+123455555555') Call to order
