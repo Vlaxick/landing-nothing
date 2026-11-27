@@ -9,16 +9,12 @@
 
 .c-header__inner {
   display: flex;
-  height: 80px;
+  height: 72px;
   align-items: center;
   justify-content: space-between;
 
   @include tools.mq('tablet') {
-    height: 104px;
-  }
-
-  @include tools.mq('desktop') {
-    height: 120px;
+    height: 96px;
   }
 }
 
@@ -43,6 +39,14 @@
   position: relative;
   align-items: center;
   color: var(--color-text);
+}
+
+.c-header__phone > :last-child,
+.c-header__menu > :last-child {
+  @include tools.mq('tablet') {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .c-header__phone-number {
