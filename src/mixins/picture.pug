@@ -1,5 +1,11 @@
-mixin picture(image, small, large, fallback, width, height, alt, className, sizes)
+mixin picture(image, small, large, fallback, width, height, alt, className, sizes, mobileImage)
   picture(class=className)
+    if mobileImage
+      source(
+        media='(max-width: 743px)',
+        srcset=`/src/assets/images/generated/${mobileImage}-130.webp 1x, /src/assets/images/generated/${mobileImage}-260.webp 2x`,
+        type='image/webp'
+      )
     source(
       type='image/avif',
       srcset=`/src/assets/images/generated/${image}-${small}.avif ${small}w, /src/assets/images/generated/${image}-${large}.avif ${large}w`,
