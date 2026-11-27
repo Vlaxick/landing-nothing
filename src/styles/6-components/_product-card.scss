@@ -18,6 +18,10 @@
 
 .c-product-card__description {
   margin-top: 8px;
+
+  @include tools.mq('desktop') {
+    max-width: 280px;
+  }
 }
 
 .c-product-card__intro {
