@@ -1,0 +1,18 @@
+@use '../2-tools' as tools;
+
+.c-section-title {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1;
+
+  @include tools.mq('tablet') {
+    font-size: 40px;
+    letter-spacing: 0;
+  }
+
+  @include tools.mq('desktop') {
+    font-size: 48px;
+  }
+}

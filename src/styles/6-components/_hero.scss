@@ -1,0 +1,59 @@
+@use '../2-tools' as tools;
+
+.c-hero {
+  position: relative;
+  height: 568px;
+
+  @include tools.mq('tablet') {
+    height: 993px;
+  }
+
+  @include tools.mq('desktop') {
+    height: 720px;
+  }
+}
+
+.c-hero__picture,
+.c-hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.c-hero__image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.c-hero__content {
+  position: relative;
+  height: 100%;
+}
+
+.c-hero__grid {
+  height: 100%;
+  align-items: end;
+}
+
+.c-hero__title {
+  grid-column: 1 / -1;
+  padding-bottom: 40px;
+  font-family: var(--font-heading);
+  font-size: var(--hero-title-mobile);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+
+  @include tools.mq('tablet') {
+    grid-column: 1 / 5;
+    padding-bottom: 65px;
+    font-size: var(--hero-title-tablet);
+  }
+
+  @include tools.mq('desktop') {
+    grid-column: 1 / 7;
+    padding-bottom: 92px;
+    font-size: var(--hero-title-desktop);
+  }
+}

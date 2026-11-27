@@ -1,0 +1,39 @@
+@use '../2-tools' as tools;
+
+.c-about {
+  padding-top: 48px;
+
+  @include tools.mq('tablet') {
+    padding-top: 56px;
+  }
+}
+
+.c-about__title {
+  grid-column: 1 / -1;
+  margin-bottom: 24px;
+
+  @include tools.mq('tablet') {
+    grid-column: 1 / 4;
+    margin-bottom: 0;
+  }
+
+  @include tools.mq('desktop') {
+    grid-column: 1 / 7;
+  }
+}
+
+.c-about__text {
+  grid-column: 1 / -1;
+
+  @include tools.mq('tablet') {
+    grid-column: 4 / 7;
+  }
+
+  @include tools.mq('desktop') {
+    grid-column: 7 / 13;
+  }
+}
+
+.c-about__paragraph + .c-about__paragraph {
+  margin-top: 1.4em;
+}

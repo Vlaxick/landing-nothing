@@ -21,3 +21,14 @@ img {
     scroll-behavior: auto;
   }
 }
+
+:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+}
+
+body:has(.c-menu:target) > .c-header,
+body:has(.c-menu:target) > main,
+body:has(.c-menu:target) > footer {
+  visibility: hidden;
+}

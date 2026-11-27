@@ -1,0 +1,93 @@
+@use '../2-tools' as tools;
+
+.c-menu {
+  position: fixed;
+  z-index: 5;
+  inset: 0;
+  overflow-y: auto;
+  background: #e8e9eb;
+  visibility: hidden;
+}
+
+.c-menu:target {
+  visibility: visible;
+}
+
+.c-menu__inner {
+  min-height: 100%;
+}
+
+.c-menu__header {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+
+  @include tools.mq('tablet') {
+    height: 104px;
+  }
+
+  @include tools.mq('desktop') {
+    height: 120px;
+  }
+}
+
+.c-menu__logo-image {
+  width: 130px;
+  height: auto;
+
+  @include tools.mq('tablet') {
+    width: 172px;
+  }
+}
+
+.c-menu__close {
+  display: inline-flex;
+  color: var(--color-text);
+}
+
+.c-menu__list {
+  display: grid;
+  gap: 24px;
+  padding: 32px 0 0;
+  list-style: none;
+}
+
+.c-menu__link,
+.c-menu__number,
+.c-menu__call {
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.c-menu__link {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.c-menu__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+.c-menu__contact {
+  display: grid;
+  justify-items: start;
+  gap: 16px;
+  padding-top: 40px;
+}
+
+.c-menu__number,
+.c-menu__call {
+  font-size: 16px;
+}
+
+.c-menu__call {
+  padding-bottom: 8px;
+  border-bottom: 1px solid currentcolor;
+  font-size: 12px;
+}

@@ -1,0 +1,33 @@
+@use '../2-tools' as tools;
+
+.c-product-card__picture {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  background: #f8f8fa;
+}
+
+.c-product-card__title {
+  margin-top: 24px;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.c-product-card__description {
+  margin-top: 8px;
+}
+
+.c-product-card__intro {
+  @include tools.mq('desktop') {
+    display: none;
+  }
+}
+
+.c-product-card__price {
+  margin-top: 12px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}

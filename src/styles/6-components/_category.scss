@@ -1,0 +1,42 @@
+@use '../2-tools' as tools;
+
+.c-category__picture {
+  display: block;
+  grid-column: span 1;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.c-category__picture--wide {
+  @include tools.mq('tablet') {
+    grid-column: span 4;
+    aspect-ratio: 392 / 184;
+  }
+
+  @include tools.mq('desktop') {
+    grid-column: span 8;
+    aspect-ratio: 672 / 324;
+  }
+}
+
+.c-category__picture--narrow {
+  @include tools.mq('tablet') {
+    grid-column: span 2;
+  }
+
+  @include tools.mq('desktop') {
+    grid-column: span 4;
+  }
+}
+
+.c-category__title {
+  margin-top: 16px;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  @include tools.mq('tablet') {
+    font-size: 24px;
+  }
+}

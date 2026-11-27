@@ -1,0 +1,39 @@
+.c-field__input {
+  display: block;
+  width: 100%;
+  min-height: var(--field-height);
+  padding: 14px var(--field-inline-padding);
+  border: 1px solid transparent;
+  border-radius: var(--control-radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: 400 var(--field-text-size) / 1.4 var(--font-body);
+}
+
+.c-field__input::placeholder {
+  color: var(--color-placeholder);
+  opacity: 1;
+}
+
+.c-field__input:hover {
+  border-color: var(--color-field-hover-border);
+}
+
+.c-field__input:focus-visible {
+  border-color: var(--color-text);
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.c-field__input:not(:placeholder-shown) {
+  color: var(--color-text);
+}
+
+.c-field__input:user-invalid {
+  border-color: #b00020;
+}
+
+.c-field__input--message {
+  min-height: 148px;
+  resize: vertical;
+}

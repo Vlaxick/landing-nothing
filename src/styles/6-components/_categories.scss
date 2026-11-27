@@ -1,0 +1,52 @@
+@use '../2-tools' as tools;
+
+.c-categories {
+  padding-top: 96px;
+  padding-bottom: 96px;
+
+  @include tools.mq('tablet') {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  @include tools.mq('desktop') {
+    padding-top: 126px;
+  }
+}
+
+.c-categories__title {
+  grid-column: 1 / -1;
+  margin-bottom: 48px;
+
+  @include tools.mq('tablet') {
+    grid-column: 1 / 6;
+    margin-bottom: 56px;
+  }
+
+  @include tools.mq('desktop') {
+    grid-column: 1 / 8;
+  }
+}
+
+.c-categories__list {
+  display: grid;
+  grid-column: 1 / -1;
+  row-gap: 40px;
+
+  @include tools.mq('tablet') {
+    row-gap: 56px;
+  }
+}
+
+.c-categories__button {
+  grid-column: 1 / -1;
+  margin-top: 40px;
+
+  @include tools.mq('tablet') {
+    margin-top: 56px;
+  }
+
+  @include tools.mq('desktop') {
+    grid-column: 1 / 5;
+  }
+}

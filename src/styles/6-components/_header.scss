@@ -1,0 +1,72 @@
+@use '../2-tools' as tools;
+
+.c-header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+}
+
+.c-header__inner {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+
+  @include tools.mq('tablet') {
+    height: 104px;
+  }
+
+  @include tools.mq('desktop') {
+    height: 120px;
+  }
+}
+
+.c-header__logo-image {
+  width: 130px;
+  height: auto;
+
+  @include tools.mq('tablet') {
+    width: 172px;
+  }
+}
+
+.c-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.c-header__phone,
+.c-header__menu {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  color: var(--color-text);
+}
+
+.c-header__phone-number {
+  position: absolute;
+  right: 100%;
+  padding-right: 20px;
+  font: 700 12px / 1 var(--font-heading);
+  letter-spacing: 2px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.c-header__phone:hover .c-header__phone-number,
+.c-header__phone:focus-visible .c-header__phone-number {
+  opacity: 1;
+}
+
+.c-header__menu:hover [data-bar='top'],
+.c-header__menu:focus-visible [data-bar='top'] {
+  width: 13px;
+}
+
+.c-header__menu:hover [data-bar='bottom'],
+.c-header__menu:focus-visible [data-bar='bottom'] {
+  width: 9px;
+}

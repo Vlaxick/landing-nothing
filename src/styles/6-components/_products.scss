@@ -1,0 +1,35 @@
+@use '../2-tools' as tools;
+
+.c-products {
+  padding-top: 64px;
+
+  @include tools.mq('tablet') {
+    padding-top: 120px;
+  }
+}
+
+.c-products__title {
+  grid-column: 1 / -1;
+  margin-bottom: 48px;
+
+  @include tools.mq('tablet') {
+    margin-bottom: 56px;
+  }
+}
+
+.c-products__list {
+  grid-column: 1 / -1;
+  row-gap: 40px;
+
+  @include tools.mq('tablet') {
+    row-gap: 56px;
+  }
+}
+
+.c-products__item {
+  grid-column: 1 / -1;
+
+  @include tools.mq('desktop') {
+    grid-column: span 4;
+  }
+}
