@@ -1,0 +1,5 @@
+.c-page:has(.c-menu:target) > .c-header,
+.c-page:has(.c-menu:target) > .c-page__main,
+.c-page:has(.c-menu:target) > .c-page__footer {
+  visibility: hidden;
+}
